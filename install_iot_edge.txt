@@ -1,0 +1,7 @@
+
+Ubuntu Server 18.04:
+curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
+
+Raspberry Pi OS Stretch:
+curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
+
