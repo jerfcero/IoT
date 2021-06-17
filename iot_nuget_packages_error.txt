@@ -1,9 +1,10 @@
 Hello.
 I have errors in the terminal when I run these commands
-The source of the error is by the installed visual installed with Nuget and is only configured for the local repository.
+The source of the error is by the previus installed visual basic 2019 with Nuget and is only configured for the local repository.
 You must add an online repository to get the different packages
 
 https://api.nuget.org/v3/index.json
+
 steps:
 1. Open Visual Studio 2019
 2. Continue without code
