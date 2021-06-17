@@ -1,0 +1,54 @@
+Hello.
+I have errors in the terminal when I run these commands
+The source of the error is by the installed visual installed with Nuget and is only configured for the local repository.
+You must add an online repository to get the different packages
+
+https://api.nuget.org/v3/index.json
+steps:
+1. Open Visual Studio 2019
+2. Continue without code
+3. In the menu above click on Tools / NuGet Pakage Manager / Pakage Manager Settings (step3.jpg)
+4. In the menu on the left click on Package Sources / Add (step4.jpg)
+5. add and paste the url "https://api.nuget.org/v3/index.json"
+6. Return to the lab or work
+
+dotnet add package Microsoft.Azure.Devices.Client
+ 
+ C:\CaveDevice> dotnet add package Microsoft.Azure.Devices.Client
+  Determining projects to restore...
+  Writing C:\Users\XXX\AppData\Local\Temp\tmpDC36.tmp
+info : Adding PackageReference for package 'Microsoft.Azure.Devices.Client' into project 'C:\CaveDevice\CaveDevice.csproj'.
+error: There are no versions available for the package 'Microsoft.Azure.Devices.Client'.
+
+
+Usage: NuGet.CommandLine.XPlat.dll package add [options]
+
+Options:
+  -h|--help               Show help information
+  --force-english-output  Forces the application to run using an invariant, English-based culture.
+  --package               Id of the package to be added.
+  --version               Version of the package to be added.
+  -d|--dg-file            Path to the dependency graph file to be used to restore preview and compatibility check.
+  -p|--project            Path to the project file.
+  -f|--framework          Frameworks for which the package reference should be added.
+  -n|--no-restore         Do not perform restore preview and compatibility check. The added package reference will be unconditional.
+  -s|--source             Specifies NuGet package sources to use during the restore.
+  --package-directory     Directory to restore packages in.
+  --interactive           Allow the command to block and require manual action for operations like authentication.
+  --prerelease            Allows prerelease packages to be installed.
+
+
+dotnet add package Newtonsoft.Json
+
+error: NU1102: Unable to find package Microsoft.CSharp with version (>= 4.0.1)
+error:   - Found 1 version(s) in Microsoft Visual Studio Offline Packages [ Nearest version: 4.0.0 ]
+error: NU1102: Unable to find package System.Dynamic.Runtime with version (>= 4.0.11)
+error:   - Found 1 version(s) in Microsoft Visual Studio Offline Packages [ Nearest version: 4.0.10 ]
+error: NU1101: Unable to find package System.Runtime.Serialization.Primitives. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages
+error: Package 'Newtonsoft.Json' is incompatible with 'all' frameworks in project 'C:\CaveDevice\CaveDevice.csproj'.
+
+
+error encountered during execution of: 
+https://microsoftlearning.github.io/AZ-220-Microsoft-Azure-IoT-Developer/Instructions/Labs/LAB_AK_04-connect-iot-device-to-azure.html
+
+Good luck
