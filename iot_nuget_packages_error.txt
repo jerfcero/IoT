@@ -7,8 +7,8 @@ https://api.nuget.org/v3/index.json
 steps:
 1. Open Visual Studio 2019
 2. Continue without code
-3. In the menu above click on Tools / NuGet Pakage Manager / Pakage Manager Settings (step3.jpg)
-4. In the menu on the left click on Package Sources / Add (step4.jpg)
+3. In the menu above click on Tools / NuGet Pakage Manager / Pakage Manager Settings (step3.png)
+4. In the menu on the left click on Package Sources / Add (step4.png)
 5. add and paste the url "https://api.nuget.org/v3/index.json"
 6. Return to the lab or work
 
