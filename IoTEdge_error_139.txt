@@ -1,0 +1,36 @@
+problem solved 
+-> only run on VM console -> sudo systemctl restart iotedge
+
+
+2021-08-13 15:32:51  Starting Edge Hub
+2021-08-13 15:32:51.848 +00:00 Edge Hub Main()
+Unhandled exception. System.AggregateException: One or more errors occurred. (Error calling CreateServerCertificateAsync: Could not get server cert
+        caused by: An error occurred creating the certificate
+        caused by: HSM failure
+        caused by: HSM API returned an invalid null response)
+ ---> Microsoft.Azure.Devices.Edge.Util.Edged.WorkloadCommunicationException- Message:Error calling CreateServerCertificateAsync: Could not get server cert
+        caused by: An error occurred creating the certificate
+        caused by: HSM failure
+        caused by: HSM API returned an invalid null response, StatusCode:500, at:   at Microsoft.Azure.Devices.Edge.Util.Edged.Version_2019_01_30.WorkloadClient.HandleException(Exception ex, String operation) in /home/vsts/work/1/s/edge-util/src/Microsoft.Azure.Devices.Edge.Util/edged/version_2019_01_30/WorkloadClient.cs:line 109
+   at Microsoft.Azure.Devices.Edge.Util.Edged.WorkloadClientVersioned.Execute[T](Func`1 func, String operation) in /home/vsts/work/1/s/edge-util/src/Microsoft.Azure.Devices.Edge.Util/edged/WorkloadClientVersioned.cs:line 77
+   at Microsoft.Azure.Devices.Edge.Util.Edged.Version_2019_01_30.WorkloadClient.CreateServerCertificateAsync(String hostname, DateTime expiration) in /home/vsts/work/1/s/edge-util/src/Microsoft.Azure.Devices.Edge.Util/edged/version_2019_01_30/WorkloadClient.cs:line 35
+   at Microsoft.Azure.Devices.Edge.Util.CertificateHelper.GetServerCertificatesFromEdgelet(Uri workloadUri, String workloadApiVersion, String workloadClientApiVersion, String moduleId, String moduleGenerationId, String edgeHubHostname, DateTime expiration) in /home/vsts/work/1/s/edge-util/src/Microsoft.Azure.Devices.Edge.Util/CertificateHelper.cs:line 260
+   at Microsoft.Azure.Devices.Edge.Hub.Service.EdgeHubCertificates.LoadAsync(IConfigurationRoot configuration, ILogger logger) in /home/vsts/work/1/s/edge-hub/src/Microsoft.Azure.Devices.Edge.Hub.Service/EdgeHubCertificates.cs:line 54
+   at Microsoft.Azure.Devices.Edge.Hub.Service.Program.MainAsync(IConfigurationRoot configuration) in /home/vsts/work/1/s/edge-hub/src/Microsoft.Azure.Devices.Edge.Hub.Service/Program.cs:line 54
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.Azure.Devices.Edge.Hub.Service.Program.Main() in /home/vsts/work/1/s/edge-hub/src/Microsoft.Azure.Devices.Edge.Hub.Service/Program.cs:line 33
+
+NAME             STATUS           DESCRIPTION                 CONFIG
+edgeAgent        running          Up 10 minutes               mcr.microsoft.com/azureiotedge-agent:1.0
+edgeHub          failed           Failed (139) 4 minutes ago  mcr.microsoft.com/azureiotedge-hub:1.0
+
+NAME             STATUS           DESCRIPTION                 CONFIG
+edgeAgent        running          Up a minute                 mcr.microsoft.com/azureiotedge-agent:1.1
+edgeHub          failed           Failed (139) 0 seconds ago  mcr.microsoft.com/azureiotedge-hub:1.1
+
+specs 
+iotedge agents 1.1 iothub 1.1
+linux vm 16.04 LTS
+ 
